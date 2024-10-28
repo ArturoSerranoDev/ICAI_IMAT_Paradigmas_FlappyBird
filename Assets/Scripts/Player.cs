@@ -3,13 +3,16 @@
 public class Player : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private Sprite[] sprites;
+    public Sprite[] sprites;
 
     [Header("Parameters")]
-    [SerializeField] private float strength = 5f;
-    [SerializeField] private const float Gravity = -9.81f;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Vector3 direction;
+    public float strength = 5f;
+    
+    private const float Gravity = -9.81f;
+    
+    private SpriteRenderer spriteRenderer;
+    
+    private Vector3 direction;
 
     private void Start()
     {
@@ -21,9 +24,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            /// ...
         }
-
 
         // Apply gravity and update the position
         // Time.deltaTime is applied twice because acceleration is in m/s^2
