@@ -8,16 +8,23 @@ public class Pipes : MonoBehaviour
 
     [Header("Parameters")]
 
-    private float leftEdge;
+    public float leftEdge;
+    public float strength = 2f;
+
 
     private void Start()
     {
-        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
+        //leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
     }
 
     private void Update()
     {
-        // transform.position += ...
+        transform.position += Vector3.left * strength;
+
+        if (transform.position.x < leftEdge)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
