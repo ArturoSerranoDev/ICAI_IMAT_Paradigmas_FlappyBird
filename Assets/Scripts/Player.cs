@@ -21,15 +21,22 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+
+        // izq
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            // direction = ...
+            direction += Vector3.up * strength;
         }
+
 
         // Apply gravity and update the position
         // Time.deltaTime is applied twice because acceleration is in m/s^2
         direction.y += Gravity * Time.deltaTime ;
-        transform.position += direction* Time.deltaTime;
+        transform.position += direction * Time.deltaTime;
+
+
+
+        transform.rotation = Quaternion.Euler(0, 0, direction.y * 10);
     }
 
     private void AnimateSprite()

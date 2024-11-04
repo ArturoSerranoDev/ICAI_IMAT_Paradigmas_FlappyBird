@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,12 +16,24 @@ public class GameManager : MonoBehaviour
     public GameObject gameOver;
 
     public int Score;
+    public float timeToSpawn = 5;
+    public float elapsedTime;
     
     private void Start()
     {
         Pause();
     }
-    
+
+    // Another way in Unity to create timed functions
+    private IEnumerator SpawnCoroutine()
+    {
+        while (true)
+        {
+            spawner.Spawn();
+            yield return new WaitForSeconds(5);
+        }
+    }
+
     public void Play()
     {
         Score = 0;
@@ -42,10 +55,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        elapsedTime += Time.deltaTime;
+
+        if (elapsedTime > timeToSpawn)
+        {
+            spawner.Spawn();
+            elapsedTime = 0;
+        }
+    }
+
     public void GameOver()
     {
         playButton.SetActive(true);
         gameOver.SetActive(true);
+
+        spawner.DestroyAllPipes();
 
         Pause();
     }
