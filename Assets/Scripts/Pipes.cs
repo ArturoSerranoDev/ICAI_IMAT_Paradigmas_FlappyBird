@@ -11,7 +11,6 @@ public class Pipes : MonoBehaviour
     public float leftEdge;
     public float strength = 2f;
 
-
     private void Start()
     {
         //leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
