@@ -24,16 +24,6 @@ public class GameManager : MonoBehaviour
         Pause();
     }
 
-    // Another way in Unity to create timed functions
-    private IEnumerator SpawnCoroutine()
-    {
-        while (true)
-        {
-            spawner.Spawn();
-            yield return new WaitForSeconds(5);
-        }
-    }
-
     public void Play()
     {
         Score = 0;
@@ -57,13 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        elapsedTime += Time.deltaTime;
-
-        if (elapsedTime > timeToSpawn)
-        {
-            spawner.Spawn();
-            elapsedTime = 0;
-        }
+       // Create here the spawn logic with a timer
     }
 
     public void GameOver()
