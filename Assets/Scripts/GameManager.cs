@@ -57,13 +57,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        elapsedTime += Time.deltaTime;
-
-        if (elapsedTime > timeToSpawn)
-        {
-            spawner.Spawn();
-            elapsedTime = 0;
-        }
+        // TODO: Implement pipe spawning logic
+        // Hint: Use elapsedTime, timeToSpawn, and spawner.Spawn()
     }
 
     public void GameOver()
