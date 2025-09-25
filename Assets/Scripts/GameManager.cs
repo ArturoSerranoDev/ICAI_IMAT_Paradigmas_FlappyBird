@@ -7,17 +7,17 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [Header("Dependencies")]
-    public Player player;
-    public Spawner spawner;
+    [SerializeField] private Player player;
+    [SerializeField] private Spawner spawner;
 
-    public TextMeshProUGUI scoreText; // How we reference a text component of TMPro in Unity's UI
+    [SerializeField] private TextMeshProUGUI scoreText; // How we reference a text component of TMPro in Unity's UI
     
-    public GameObject playButton;
-    public GameObject gameOver;
+    [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject gameOver;
 
-    public int Score;
-    public float timeToSpawn = 5;
-    public float elapsedTime;
+    [SerializeField] private int Score;
+    [SerializeField] private float timeToSpawn = 5;
+    [SerializeField] private float elapsedTime;
     
     private void Start()
     {

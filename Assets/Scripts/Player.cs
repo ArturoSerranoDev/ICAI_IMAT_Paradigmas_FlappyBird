@@ -3,16 +3,13 @@
 public class Player : MonoBehaviour
 {
     [Header("Dependencies")]
-    public Sprite[] sprites;
+    [SerializeField] private Sprite[] sprites;
 
     [Header("Parameters")]
-    public float strength = 5f;
-    
-    private const float Gravity = -9.81f;
-    
-    private SpriteRenderer spriteRenderer;
-    
-    private Vector3 direction;
+    [SerializeField] private float strength = 5f;
+    [SerializeField] private const float Gravity = -9.81f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Vector3 direction;
 
     private void Start()
     {
@@ -22,10 +19,9 @@ public class Player : MonoBehaviour
     private void Update()
     {
 
-        // izq
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            direction += Vector3.up * strength;
+            /// ...
         }
 
 
@@ -33,10 +29,6 @@ public class Player : MonoBehaviour
         // Time.deltaTime is applied twice because acceleration is in m/s^2
         direction.y += Gravity * Time.deltaTime ;
         transform.position += direction * Time.deltaTime;
-
-
-
-        transform.rotation = Quaternion.Euler(0, 0, direction.y * 10);
     }
 
     private void AnimateSprite()

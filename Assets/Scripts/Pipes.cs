@@ -3,13 +3,11 @@
 public class Pipes : MonoBehaviour
 {
     [Header("Dependencies")]
-    public Transform top;
-    public Transform bottom;
+    [SerializeField] private Transform top;
+    [SerializeField] private Transform bottom;
 
     [Header("Parameters")]
-
-    public float leftEdge;
-    public float strength = 2f;
+    [SerializeField] private float speed = 2f;
 
     private void Start()
     {
@@ -18,12 +16,9 @@ public class Pipes : MonoBehaviour
 
     private void Update()
     {
-        transform.position += Vector3.left * strength;
+        // transform.position += ...
 
-        if (transform.position.x < leftEdge)
-        {
-            Destroy(gameObject);
-        }
+     
     }
 
 }

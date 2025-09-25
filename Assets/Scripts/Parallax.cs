@@ -7,7 +7,7 @@
 public class Parallax : MonoBehaviour
 {
     [Header("Parameters")]
-    public float animationSpeed = 1f;
+    [SerializeField] private float animationSpeed = 1f;
     
     private MeshRenderer meshRenderer;
 
