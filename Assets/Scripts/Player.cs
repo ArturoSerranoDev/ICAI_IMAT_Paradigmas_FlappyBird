@@ -41,7 +41,16 @@ public class Player : MonoBehaviour
     // A correct pattern would be to use events
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // TODO: Implement collision detection with obstacles and scoring triggers
+        if (other.gameObject.CompareTag("Obstacle")) 
+        {
+            direction = Vector3.zero;
+            
+            FindObjectOfType<GameManager>().GameOver();
+        } 
+        else if (other.gameObject.CompareTag("Scoring")) 
+        {
+            FindObjectOfType<GameManager>().IncreaseScore();
+        }
     }
 
 }

@@ -14,10 +14,8 @@ public class Spawner : MonoBehaviour
   
     public void Spawn()
     {
-        // TODO: Implement pipe spawning with random height
-        // Hint: Use Instantiate() to create new pipes
-        // Hint: Use Random.Range(minHeight, maxHeight) for positioning
         // How we create new objects in Unity
-        // GameObject newPipe = Instantiate(pipesPrefab, Vector3.zero, Quaternion.identity);
+        GameObject newPipe = Instantiate(pipesPrefab, Vector3.zero,
+            Quaternion.identity);
     }
 }
