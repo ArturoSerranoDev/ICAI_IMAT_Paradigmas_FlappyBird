@@ -3,15 +3,14 @@
 public class Player : MonoBehaviour
 {
     [Header("Dependencies")]
-    public Sprite[] sprites;
+    [SerializeField] private Sprite[] sprites;
 
     [Header("Parameters")]
-    public float strength = 5f;
+    [SerializeField] private float strength = 5f;
     
     private const float Gravity = -9.81f;
     
     private SpriteRenderer spriteRenderer;
-    
     private Vector3 direction;
 
     private void Start()
