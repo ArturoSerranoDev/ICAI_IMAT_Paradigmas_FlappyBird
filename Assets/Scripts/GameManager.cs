@@ -70,9 +70,7 @@ public class GameManager : MonoBehaviour
     {
         playButton.SetActive(true);
         gameOver.SetActive(true);
-
-        spawner.DestroyAllPipes();
-
+        
         Pause();
     }
 
